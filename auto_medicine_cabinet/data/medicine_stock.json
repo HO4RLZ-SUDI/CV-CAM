@@ -1,0 +1,6 @@
+{
+  "Paracetamol": {"quantity": 30, "dispense_code": "A"},
+  "Ibuprofen": {"quantity": 20, "dispense_code": "B"},
+  "Antihistamine": {"quantity": 15, "dispense_code": "C"},
+  "Vitamin C": {"quantity": 40, "dispense_code": "D"}
+}

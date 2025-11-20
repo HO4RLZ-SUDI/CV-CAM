@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auto Medicine Cabinet - Scan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body data-page="index">
+  <header class="topbar">
+    <h1>Auto Medicine Cabinet</h1>
+    <nav>
+      <a href="/">Scan</a>
+      <a href="/register">Register</a>
+      <a href="/dashboard">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="grid two">
+    <section class="card">
+      <h2>Live Webcam</h2>
+      <video id="scanVideo" autoplay playsinline muted class="video-box"></video>
+      <div class="actions">
+        <button id="scanBtn">Scan Face</button>
+      </div>
+      <p class="hint">Allow camera access to scan and identify registered users.</p>
+    </section>
+
+    <section class="card" id="scanResult">
+      <h2>Scan Result</h2>
+      <div id="scanStatus" class="status">Waiting for scan...</div>
+      <div class="result-row"><span>User:</span><strong id="scanUser">-</strong></div>
+      <div class="result-row"><span>Email:</span><strong id="scanEmail">-</strong></div>
+      <div class="result-row"><span>Similarity:</span><strong id="scanScore">-</strong></div>
+      <img id="liveFeed" src="/video_feed" alt="Server Camera Feed" class="server-feed">
+    </section>
+  </main>
+
+  <canvas id="captureCanvas" class="hidden"></canvas>
+  <script src="/static/app.js"></script>
+</body>
+</html>

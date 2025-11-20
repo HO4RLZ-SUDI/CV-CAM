@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Auto Medicine Cabinet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body data-page="dashboard">
+  <header class="topbar">
+    <h1>Cabinet Dashboard</h1>
+    <nav>
+      <a href="/">Scan</a>
+      <a href="/register">Register</a>
+      <a href="/dashboard" class="active">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="grid three">
+    <section class="card">
+      <h2>Users</h2>
+      <div id="usersList" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Medicine Stock</h2>
+      <div id="stockList" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Order Medicine</h2>
+      <form id="orderForm">
+        <label>User ID<input type="text" name="user_id" placeholder="user_1" required></label>
+        <label>Medicine<input type="text" name="medicine" placeholder="Paracetamol" required></label>
+        <label>Quantity<input type="number" name="quantity" min="1" value="1" required></label>
+        <div class="actions">
+          <button type="submit">Send Order</button>
+        </div>
+      </form>
+      <div id="orderStatus" class="status">Waiting for order...</div>
+      <div class="status" id="serialStatus"></div>
+    </section>
+
+    <section class="card wide">
+      <h2>Recent Orders</h2>
+      <div id="ordersList" class="list"></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
