@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register Face - Auto Medicine Cabinet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body data-page="register">
+  <header class="topbar">
+    <h1>Register User</h1>
+    <nav>
+      <a href="/">Scan</a>
+      <a href="/register" class="active">Register</a>
+      <a href="/dashboard">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="grid two">
+    <section class="card">
+      <h2>Capture Face</h2>
+      <video id="registerVideo" autoplay playsinline muted class="video-box"></video>
+      <div class="actions">
+        <button id="captureRegister">Capture Face</button>
+      </div>
+      <p class="hint">Use a clear, well-lit face image. Only RGB images are accepted.</p>
+    </section>
+
+    <section class="card">
+      <h2>User Details</h2>
+      <form id="registerForm">
+        <label>Name<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Preferred Medicine<input type="text" name="medicine" placeholder="Paracetamol" required></label>
+        <input type="file" id="faceFile" accept="image/*" class="hidden">
+        <div class="actions">
+          <button type="submit">Register</button>
+        </div>
+      </form>
+      <div id="registerStatus" class="status">Awaiting submission...</div>
+    </section>
+  </main>
+
+  <canvas id="registerCanvas" class="hidden"></canvas>
+  <script src="/static/app.js"></script>
+</body>
+</html>
